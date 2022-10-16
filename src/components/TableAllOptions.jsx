@@ -4,7 +4,7 @@ export const TableAllOptions = ({
 }) => {
 	return (
 		<>
-			<div className="form-check p-2">
+			<div className="form-check fs-5 py-2">
 				<input
 					className="form-check-input"
 					type="checkbox"

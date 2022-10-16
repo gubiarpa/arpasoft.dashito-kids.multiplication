@@ -45,18 +45,20 @@ export const MenuPage = () => {
 
 	return (
 		<>
-			<TableAllOptions
-				allTableSelected={allTableSelected}
-				toggleAllChecked={toggleAllChecked}
-			/>
-			{tableCheckedArray.map(({ value, checked }) => (
-				<TableOption
-					key={value}
-					num={value}
-					checked={checked}
-					toggleChecked={() => toggleChecked(value)}
+			<div className="container m-3">
+				<TableAllOptions
+					allTableSelected={allTableSelected}
+					toggleAllChecked={toggleAllChecked}
 				/>
-			))}
+				{tableCheckedArray.map(({ value, checked }) => (
+					<TableOption
+						key={value}
+						num={value}
+						checked={checked}
+						toggleChecked={() => toggleChecked(value)}
+					/>
+				))}
+			</div>
 		</>
 	);
 };
