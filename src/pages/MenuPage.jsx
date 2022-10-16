@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { TableAllOptions } from "../components/TableAllOptions";
 import { TableOption } from "../components/TableOption";
 import { getFirstNumbersInArray } from "../utils/arrayMethods";
 
@@ -26,7 +27,10 @@ export const MenuPage = () => {
 
 	const toggleAllChecked = () => {
 		setTableCheckedArray(
-			tableCheckedArray.map(({ value }) => ({ value, checked: !allTableSelected }))
+			tableCheckedArray.map(({ value }) => ({
+				value,
+				checked: !allTableSelected,
+			}))
 		);
 	};
 
@@ -41,18 +45,10 @@ export const MenuPage = () => {
 
 	return (
 		<>
-			<div className="form-check">
-				<input
-					className="form-check-input"
-					type="checkbox"
-					id={`all-tables`}
-					checked={allTableSelected}
-					onChange={() => toggleAllChecked()}
-				/>
-				<label className="form-check-label" htmlFor={`all-tables`}>
-					Seleccionar todos
-				</label>
-			</div>
+			<TableAllOptions
+				allTableSelected={allTableSelected}
+				toggleAllChecked={toggleAllChecked}
+			/>
 			{tableCheckedArray.map(({ value, checked }) => (
 				<TableOption
 					key={value}
