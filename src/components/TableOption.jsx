@@ -4,7 +4,7 @@ export const TableOption = ({
 	toggleChecked = () => {},
 }) => {
 	return (
-		<div className="form-check fs-5 py-2">
+		<div className="form-check fs-5 py-1">
 			<input
 				className="form-check-input"
 				type="checkbox"

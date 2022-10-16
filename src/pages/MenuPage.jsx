@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { ButtonOptions } from "../components/ButtonOptions";
 import { TableAllOptions } from "../components/TableAllOptions";
 import { TableOption } from "../components/TableOption";
 import { getFirstNumbersInArray } from "../utils/arrayMethods";
@@ -50,6 +51,7 @@ export const MenuPage = () => {
 					allTableSelected={allTableSelected}
 					toggleAllChecked={toggleAllChecked}
 				/>
+				<hr />
 				{tableCheckedArray.map(({ value, checked }) => (
 					<TableOption
 						key={value}
@@ -58,6 +60,8 @@ export const MenuPage = () => {
 						toggleChecked={() => toggleChecked(value)}
 					/>
 				))}
+				<hr />
+				<ButtonOptions />
 			</div>
 		</>
 	);
